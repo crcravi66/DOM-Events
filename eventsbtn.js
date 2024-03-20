@@ -51,3 +51,4 @@ function colorize (){
                     //evt btn
 
 const eventbtn = document.querySelector('#evt')
+eventbtn.addEventListener('click', function (event){ console.log(event);})
