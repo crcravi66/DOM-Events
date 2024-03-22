@@ -40,7 +40,7 @@ let makeRaCo = ()=>{
 
 const allBtn = document.querySelectorAll('.multiple-btn')
 for (let btn of allBtn){
-    btn.addEventListener('click', colorize)
+    btn.addEventListener('mouseleave', colorize)
 }
 
 function colorize (){
@@ -52,3 +52,16 @@ function colorize (){
 
 const eventbtn = document.querySelector('#evt')
 eventbtn.addEventListener('click', function (event){ console.log(event);})
+
+                        // bubbling
+
+const bubblediv = document.querySelector('#bubbl')
+const btnbubbl = bubblediv.lastElementChild
+
+btnbubbl.addEventListener('click', function(eve){
+    bubblediv.style.backgroundColor = makeRaCo();
+    eve.stopPropagation()
+})
+bubblediv.addEventListener("click", function(){
+    bubblediv.classList.toggle('bubbl')
+})

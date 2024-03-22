@@ -25,7 +25,7 @@ const alltweets = document.querySelector('#tweet-container')
 
 tweetForm.addEventListener("submit", function(eve){
     eve.preventDefault();
-    
+
     const usernameInput = tweetForm.elements.Username ; 
     const tweetsInput = tweetForm.elements.Tweets;  
 
@@ -45,7 +45,12 @@ const addEvents = (username, tweets ) =>{
         alltweets.append(newLi)
     }
 }
+            //tweets remove opt
 
+alltweets.addEventListener("click", function (e){
+
+    e.target.nodeName === 'LI' && e.target.remove();
+})
 
 
 
