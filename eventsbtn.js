@@ -65,3 +65,56 @@ btnbubbl.addEventListener('click', function(eve){
 bubblediv.addEventListener("click", function(){
     bubblediv.classList.toggle('bubbl')
 })
+
+
+
+                        //async functions
+
+// setTimeout(function(){
+//         document.body.style.backgroundColor = "red"
+//         setTimeout(function(){
+//             document.body.style.backgroundColor = "orange"
+//             setTimeout(function(){
+//                 document.body.style.backgroundColor = "yellow"
+//                 setTimeout(function(){
+//                     document.body.style.backgroundColor = "green"
+//                     setTimeout(function(){
+//                         document.body.style.backgroundColor = "blue"
+                        
+//                 }, 2000)
+//             }, 2000)
+//         }, 2000)
+//     }, 2000)
+// }, 2000)
+
+const delayedColorChange = (newcolor, delay, doNext) => {
+    setTimeout(() => {
+        document.body.style.backgroundColor = newcolor;
+        doNext && doNext();
+        
+    }, delay) 
+}
+
+delayedColorChange('red', 2000, () => {
+    delayedColorChange("orange", 2000, () => {
+        delayedColorChange("yellow", 2000, () => {
+            delayedColorChange("pink", 2000, () => {
+                delayedColorChange("skyblue", 2000, () => {
+                    delayedColorChange("blue", 2000, () => {
+                        delayedColorChange("lightgreen", 2000, () =>{
+                            delayedColorChange("green", 1000, ()=>{})
+                        })
+                    })
+                })
+            })
+        })
+    })
+})
+
+
+
+
+
+
+
+
