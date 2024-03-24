@@ -129,7 +129,13 @@ const fakeRequestCallback = (url) =>{
           }, 1000)
     })
 }
-
+fakeRequestCallback('passage for promise ')
+.then((data) => {
+    console.log("for resolve result :" + data);
+})
+.catch((err) => {
+    console.log("for error because rejected : " + err);
+})
 
 
 
