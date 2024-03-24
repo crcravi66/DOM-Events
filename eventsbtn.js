@@ -87,30 +87,48 @@ bubblediv.addEventListener("click", function(){
 //     }, 2000)
 // }, 2000)
 
-const delayedColorChange = (newcolor, delay, doNext) => {
-    setTimeout(() => {
-        document.body.style.backgroundColor = newcolor;
-        doNext && doNext();
+// const delayedColorChange = (newcolor, delay, doNext) => {
+//     setTimeout(() => {
+//         document.body.style.backgroundColor = newcolor;
+//         doNext && doNext();
         
-    }, delay) 
-}
+//     }, delay) 
+// }
 
-delayedColorChange('red', 2000, () => {
-    delayedColorChange("orange", 2000, () => {
-        delayedColorChange("yellow", 2000, () => {
-            delayedColorChange("pink", 2000, () => {
-                delayedColorChange("skyblue", 2000, () => {
-                    delayedColorChange("blue", 2000, () => {
-                        delayedColorChange("lightgreen", 2000, () =>{
-                            delayedColorChange("green", 1000, ()=>{})
-                        })
-                    })
-                })
-            })
-        })
+// delayedColorChange('red', 2000, () => {
+//     delayedColorChange("orange", 2000, () => {
+//         delayedColorChange("yellow", 2000, () => {
+//             delayedColorChange("pink", 2000, () => {
+//                 delayedColorChange("skyblue", 2000, () => {
+//                     delayedColorChange("blue", 2000, () => {
+//                         delayedColorChange("lightgreen", 2000, () =>{
+//                             delayedColorChange("green", 1000, ()=>{})
+//                         })
+//                     })
+//                 })
+//             })
+//         })
+//     })
+// })
+
+setTimeout((newcolor)=>{
+    document.body.style.backgroundColor = newcolor;
+}, 2000, "red" )
+
+
+                // promise 
+
+const fakeRequestCallback = (url) =>{
+    return new Promise((resolve, reject) => {
+      const random = Math.random();
+        setTimeout(() => {
+            if (random < 0.7){
+            resolve("resolve pass to url ");
+          }
+            reject("sorry rejected");
+          }, 1000)
     })
-})
-
+}
 
 
 
