@@ -113,7 +113,7 @@ bubblediv.addEventListener("click", function(){
 
 setTimeout((newcolor)=>{
     document.body.style.backgroundColor = newcolor;
-}, 2000, "red" )
+}, 0, "skyblue" )
 
 
                 // promise 
@@ -137,7 +137,27 @@ fakeRequestCallback('passage for promise ')
     console.log("for error because rejected : " + err);
 })
 
+const delayColorpromise = (color, delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            document.body.style.backgroundColor = color;
+            resolve();
+        }, delay)
+    })
+}
 
+delayColorpromise('blue', 1000)
+.then(() => delayColorpromise('pink', 1000))
+.then(() => delayColorpromise("red", 1000))
+.then(() => delayColorpromise("ligthcoral", 1000))
+.then(() => delayColorpromise(" orange", 1000))
+.then(() => delayColorpromise("yellow", 1000))
+.then(() => delayColorpromise("lightyellow", 1000))
+.then(() => delayColorpromise("lightgreen", 1000))
+.then(() => delayColorpromise("green", 1000))
+.then(() => delayColorpromise("lightgreen", 1000))
+.then(() => delayColorpromise("lightgrey", 1000))
+.then(() => delayColorpromise("grey", 1000))
 
 
 
