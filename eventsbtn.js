@@ -194,4 +194,11 @@ async function rainbow () {
 
 rainbow()
 
-const jsonobject = ` {"month": "7", "num": 614, "link": "", "year": "2009", "news": "", "safe_title": "Woodpecker", "alt": "If you don't have an extension cord I can get that too.  Because we're friends!  Right?", "img": "https://imgs.xkcd.com/comics/woodpecker.png", "title": "Woodpecker", "day": "24"} `
+ fetch ('https://jsonplaceholder.typicode.com/todos')
+.then(res => {console.log("its work,waiting to parse...... ", res)
+        return res.json();        
+})
+.then(data => {console.log("you achived data",data)
+    console.log(data[10].title);
+})
+.catch(err => console.log("error : ", err))
