@@ -129,13 +129,27 @@ const fakeRequestCallback = (url) =>{
           }, 1000)
     })
 }
-fakeRequestCallback('passage for promise ')
-.then((data) => {
-    console.log("for resolve result :" + data);
-})
-.catch((err) => {
-    console.log("for error because rejected : " + err);
-})
+
+// fakeRequestCallback('passage for promise ')
+// .then((data) => {
+//     console.log("for resolve result :" + data);
+// })
+// .catch((err) => {
+//     console.log("for error because rejected : " + err);
+// })
+
+async function fakecallback (){
+    try  {
+    let takeresult = await fakeRequestCallback('ok you win');
+    console.log(takeresult);
+    console.log(res);
+    }
+    catch (e){
+     console.log(e)
+    } 
+}
+
+                    //background color change
 
 const delayColorpromise = (color, delay) => {
     return new Promise((resolve, reject) => {
@@ -145,20 +159,39 @@ const delayColorpromise = (color, delay) => {
         }, delay)
     })
 }
+                        //then method 
+// delayColorpromise('blue', 1000)
+// .then(() => delayColorpromise('pink', 1000))
+// .then(() => delayColorpromise("red", 1000))
+// .then(() => delayColorpromise("ligthcoral", 1000))
+// .then(() => delayColorpromise(" orange", 1000))
+// .then(() => delayColorpromise("yellow", 1000))
+// .then(() => delayColorpromise("lightyellow", 1000))
+// .then(() => delayColorpromise("lightgreen", 1000))
+// .then(() => delayColorpromise("green", 1000))
+// .then(() => delayColorpromise("lightgreen", 1000))
+// .then(() => delayColorpromise("lightgrey", 1000))
+// .then(() => delayColorpromise("grey", 1000))
 
-delayColorpromise('blue', 1000)
-.then(() => delayColorpromise('pink', 1000))
-.then(() => delayColorpromise("red", 1000))
-.then(() => delayColorpromise("ligthcoral", 1000))
-.then(() => delayColorpromise(" orange", 1000))
-.then(() => delayColorpromise("yellow", 1000))
-.then(() => delayColorpromise("lightyellow", 1000))
-.then(() => delayColorpromise("lightgreen", 1000))
-.then(() => delayColorpromise("green", 1000))
-.then(() => delayColorpromise("lightgreen", 1000))
-.then(() => delayColorpromise("lightgrey", 1000))
-.then(() => delayColorpromise("grey", 1000))
+                            //Aync and await method
 
+async function rainbow () {
+    await delayColorpromise("blue", 1000)
+    await delayColorpromise("pink", 1000)
+    await delayColorpromise("red", 1000)
+    await delayColorpromise("lightcoral", 1000)
+    await delayColorpromise("orange", 1000)
+    await delayColorpromise("yellow", 1000)
+    await delayColorpromise("lightyellow", 1000)
+    await delayColorpromise("lightgreen", 1000)
+    await delayColorpromise("green", 1000)
+    await delayColorpromise("lightgreen", 1000)
+    await delayColorpromise("lightgrey", 1000)
+    await delayColorpromise("grey", 1000)
+    await delayColorpromise("whitesmoke", 1000)
 
+}
 
+rainbow()
 
+const jsonobject = ` {"month": "7", "num": 614, "link": "", "year": "2009", "news": "", "safe_title": "Woodpecker", "alt": "If you don't have an extension cord I can get that too.  Because we're friends!  Right?", "img": "https://imgs.xkcd.com/comics/woodpecker.png", "title": "Woodpecker", "day": "24"} `
