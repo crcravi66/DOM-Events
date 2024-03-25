@@ -193,12 +193,25 @@ async function rainbow () {
 }
 
 rainbow()
+//                 // fetch method
+//  fetch ('https://jsonplaceholder.typicode.com/todos')
+// .then(res => {console.log("its work,waiting to parse...... ", res)
+//         return res.json();        
+// })
+// .then(data => {console.log("you achived data",data)
+//     console.log(data[10].title);
+// })
+// .catch(err => console.log("error : ", err))
 
- fetch ('https://jsonplaceholder.typicode.com/todos')
-.then(res => {console.log("its work,waiting to parse...... ", res)
-        return res.json();        
-})
-.then(data => {console.log("you achived data",data)
-    console.log(data[10].title);
-})
-.catch(err => console.log("error : ", err))
+const fetchMethodUse = async () =>{
+    try{ const res = await fetch("https://jsonplaceholder.typicode.com/users")
+     const data = await  res.json()
+     console.log(data);
+     console.log(data[2].name);
+     console.log(data[2].id);
+    }
+    catch(e){
+        console.log("error : ",e)
+    }
+
+}
