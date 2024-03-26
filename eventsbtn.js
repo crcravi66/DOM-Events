@@ -213,5 +213,5 @@ const fetchMethodUse = async () =>{
     catch(e){
         console.log("error : ",e)
     }
-
 }
+
