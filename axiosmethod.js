@@ -18,3 +18,28 @@ const getDadJoke = async () => {
     }
 }
 button.addEventListener('click', newjoke)
+
+
+                //tv name search form
+
+const form = document.querySelector("#movielist")
+const imgmain = document.querySelector("#img-main")
+form.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+    const searchName = form.elements.query.value
+    const config = {params: {q: searchName}}
+    const res = await axios.get(`https://api.tvmaze.com/search/shows`,config)
+     film (res.data)
+     form.elements.query.value ="";
+})
+
+const film = (films)=>{
+    for (let result of films){
+        const img = document.createElement("IMG")
+        if(result.show.image){
+             img.src = result.show.image.medium
+            img.append(img.src)
+            imgmain.append(img)
+            }
+        }
+}
