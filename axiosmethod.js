@@ -61,4 +61,28 @@ function makeColor(r, g, b){
     
 }
 const firstColor = makeColor(26, 65, 56);
-firstColor
+firstColor.rgb()
+
+
+
+                    //constructor function
+
+function Color(r, g, b){
+    this.r = r;
+    this.g = g;
+    this.b = b;
+}
+Color.prototype.rgb = function(){
+    const {r, g, b} = this
+    return `rgb(${r}, ${g}, ${b})`;
+};
+Color.prototype.rgba =function(a){
+    const {r, g, b} = this
+    return `rgba(${r}, ${g}, ${b}, ${a})`
+}
+const color1 = new Color(100, 58, 150);
+const color2 = new Color(200, 108, 150);
+const color3 = new Color(100, 58, 150);
+console.log(color1.rgb());
+console.log(color2.rgb());
+console.log(color3.rgba(0.6));
