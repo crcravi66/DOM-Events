@@ -43,3 +43,22 @@ const film = (films)=>{
             }
         }
 }
+
+
+                    //factory functio
+
+function makeColor(r, g, b){
+    let color = {};
+    color.r = r;
+    color.g = g;
+    color.b = b;
+    color.rgb = function() 
+    {
+        const { r, g, b } = this;
+        return `rgb(${r}, ${g}, ${b})`;
+    };
+    return color
+    
+}
+const firstColor = makeColor(26, 65, 56);
+firstColor
