@@ -86,3 +86,29 @@ const color3 = new Color(100, 58, 150);
 console.log(color1.rgb());
 console.log(color2.rgb());
 console.log(color3.rgba(0.6));
+
+
+
+                        //classes for js
+
+class Color1  {
+    constructor( r, g, b, name){
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.name = name
+    }
+    innerRGB(){
+        const {r, g, b} = this
+        return `${r}, ${g}, ${b}`
+    }
+    rgb(){
+        return `rgb(${this.innerRGB()})`
+    }
+    rgba(a =1.0){
+        return `rgba(${this.innerRGB()}, ${a})`
+    }
+
+}
+const c1 = new Color1(58, 185, 200, 'skyblue');
+const c2 = new Color1(200, 90, 160, 'pink');
