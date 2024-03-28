@@ -105,10 +105,41 @@ class Color1  {
     rgb(){
         return `rgb(${this.innerRGB()})`
     }
-    rgba(a =1.0){
+    rgba(a = 1.0){
         return `rgba(${this.innerRGB()}, ${a})`
     }
 
 }
 const c1 = new Color1(58, 185, 200, 'skyblue');
 const c2 = new Color1(200, 90, 160, 'pink');
+
+                    //extend and super keyword
+
+class pet{
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    eat(){
+        return `${this.name} is eating`; 
+    }
+}
+class Cat extends pet{
+    constructor(name,age,livesleft = 7){
+        super(name,age)
+        this.livesleft = livesleft;
+    }
+    meow(){
+        return`meowww....`
+    }
+    
+}
+
+class Dog extends pet {
+    eat(){
+        return`${this.name} is eating at time`;
+    }
+}
+
+const dog = new Dog("mani",8)
+const cat = new Cat("kitty",6);
