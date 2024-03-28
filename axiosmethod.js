@@ -132,9 +132,7 @@ class Cat extends pet{
     meow(){
         return`meowww....`
     }
-    
 }
-
 class Dog extends pet {
     eat(){
         return`${this.name} is eating at time`;
@@ -143,3 +141,8 @@ class Dog extends pet {
 
 const dog = new Dog("mani",8)
 const cat = new Cat("kitty",6);
+console.log(cat);
+console.log(dog);
+
+
+    
